@@ -5,6 +5,7 @@ import DailyWeather from "./components/DailyWeather";
 import HourlyWeather from "./components/HourlyWeather";
 import DaysWeather from "./components/DaysWeather";
 import About from "./components/About";
+import Weathertypes from "./components/Weathertypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./styles/App.scss";
@@ -29,7 +30,8 @@ function App() {
     <Route  path="/" exact component={CurrentWeather} />
     <Route path="/DailyWeather" exact component={DailyWeather} />
     <Route path="/HourlyWeather" component={HourlyWeather} />
-    <Route path="/DailyWeather/:id" component={DaysWeather}/>
+    <Route path="/DailyWeather/:id/:lati/:longi" component={DaysWeather}/>
+    <Route path="/Weathertypes" component={Weathertypes}/>
     <Route path="/About" component={About}/>
     </Switch>  
     <Nav display={display} setDisplay={setDisplay}/>

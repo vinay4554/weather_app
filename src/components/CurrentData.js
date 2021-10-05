@@ -49,7 +49,7 @@ function CurrentData({time,day}){
       <div className="input">
       <input 
         type="text" 
-        spellcheck="false"
+        spellCheck="false"
         value={inputvalue} 
         onInput={handleValue}
         placeholder="Search Your City ..."

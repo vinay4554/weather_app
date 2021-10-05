@@ -19,6 +19,11 @@ function Nav({display,setDisplay}){
       setDisplay(!display);
     }}>Daily Forecast</li>
         </Link>
+        <Link to="/Weathertypes">
+        <li onClick={() => {
+      setDisplay(!display);
+    }}>Weather Types</li>
+        </Link>
         <Link to="/About">
         <li onClick={() => {
       setDisplay(!display);

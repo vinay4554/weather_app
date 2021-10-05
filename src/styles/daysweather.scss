@@ -40,3 +40,8 @@ h5.hdata {
 img {
   width: 80px;
 }
+@media screen and (min-width: 768px) {
+  .daydata {
+    padding-bottom: 150px;
+  }
+}

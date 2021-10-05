@@ -14,7 +14,6 @@
 }
 @mixin backgroundcolor($theme) {
   background-color: ($theme);
-  box-shadow: 0 0 5px $theme, 0 0 5px $theme;
 }
 .RAIN div {
   @include backgroundcolor(rgba(20, 82, 110, 0.6));
