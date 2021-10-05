@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.about {
+  padding: 20px;
+  background-color: #474e5d;
+  color: white;
+}
+.about-section {
+  padding: 10px 0;
+}
+.project-section {
+  padding: 10px 0;
+}
+.contact-section {
+  font-size: 15px;
+  padding: 10px 0;
+  .email a {
+    padding-left: 2px;
+    text-decoration: none;
+  }
+  #icon {
+    padding-right: 2px;
+  }
+  div {
+    padding: 5px 0;
+  }
+}
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}

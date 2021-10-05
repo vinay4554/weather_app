@@ -1,0 +1,83 @@
+input[type="text"] {
+  width: 85%;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  resize: vertical;
+  color: black;
+}
+#searchicon {
+  font-size: 30px;
+  padding-top: 10px;
+  color: rgb(99, 112, 165);
+  cursor: pointer;
+}
+.input {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 50px;
+}
+.CurrentWeather {
+  display: grid;
+  column-gap: 2%;
+  padding: 10px 1% 0 1%;
+  color: white;
+  grid-template-areas:
+    "location location location"
+    "clouds  clouds-icon clouds-icon"
+    "clouds clouds-icon clouds-icon"
+    "precepitation humidity wind";
+}
+%grid-items {
+  text-align: center;
+}
+.location {
+  @extend %grid-items;
+  grid-area: location;
+  font-size: 25px;
+  h2 {
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+  h5 {
+    margin: 0 auto;
+  }
+}
+
+.clouds {
+  @extend %grid-items;
+  grid-area: clouds;
+  margin: 25px auto;
+  text-align: left;
+  padding-left: 15px;
+  font-size: 20px;
+}
+.clouds-icon {
+  @extend %grid-items;
+  grid-area: clouds-icon;
+  margin-top: 30px;
+  font-size: 30px;
+}
+@media screen and (max-width: 768px) {
+  .clouds-icon {
+    margin-top: 20px;
+    h1 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .clouds {
+    margin: 20px auto;
+    h1 {
+      margin-top: 0;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .input {
+    padding-left: 200px;
+  }
+}

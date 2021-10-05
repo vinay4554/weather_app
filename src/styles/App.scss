@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+@mixin background($theme) {
+  background-image: url($theme);
+  background-size: cover;
+  filter: brightness(100%);
+  background-attachment: scroll;
+}
+.dailyWeather,
+.daysdata,
+.hourlyweather {
+  @include background("../images/mist-night.jpg");
+}
+.Rain {
+  @include background("../images/rain.jpg");
+}
+.Snow {
+  @include background("../images/snow-night.jpg");
+}
+.Clear {
+  @include background("../images/clear.jpg");
+}
+.Mist {
+  @include background("../images/mist-night.jpg");
+}
+.Tornado {
+  @include background("../images/tornado.jpg");
+}
+.Drizze {
+  @include background("../images/drizzle-night.jpg");
+}
+.Thunderstorm {
+  @include background("../images/thunderstorm-night.jpg");
+}
+.Clouds {
+  @include background("../images/clouds.jpg");
+}
+.Dust,
+.Smoke,
+.Haze,
+.Fog,
+.Ash,
+.Squall,
+.Sand {
+  @include background("../images/dust.jpg");
+}
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: rgb(201, 51, 108);
+  z-index: 10;
+  .applogo {
+    font-size: 25px;
+    z-index: 10;
+  }
+  .appicon {
+    cursor: pointer;
+  }
+}
+@import "./current";
+@import "./daily";
+@import "./hourly";
+@import "./nav";
+@import "./details";
+@import "./daysweather.scss";
+@import "./about.scss";

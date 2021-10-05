@@ -1,0 +1,23 @@
+.hourlyweather h3 {
+  margin-top: 0;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+.hourweather {
+  display: grid;
+  align-items: center;
+  border-radius: 20px;
+  padding: 8px 2%;
+  grid-template-columns: 32% 32% 32%;
+  background-color: rgba(170, 105, 201, 0.5);
+  margin: 15px 10px;
+}
+.hourlyweather > div {
+  text-align: center;
+  font-size: 15px;
+  color: white;
+}
+.hourlyweather {
+  padding-bottom: 50px;
+}

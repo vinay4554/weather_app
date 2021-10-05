@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
-
+import react,{useState,useEffect} from "react"
+import CurrentWeather from "./components/CurrentWeather";
+import Nav from "./components/Nav";
+import DailyWeather from "./components/DailyWeather";
+import HourlyWeather from "./components/HourlyWeather";
+import DaysWeather from "./components/DaysWeather";
+import About from "./components/About";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import "./styles/App.scss";
+import axios from "axios";
+import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 function App() {
+  const[display,setDisplay]=useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div className="App clear">
+    <div className="header">
+     <div className="applogo">
+       weather App
     </div>
+    <div className="appicon" onClick={() => {
+      setDisplay(!display);
+    }}>
+    <FontAwesomeIcon id="baricon" size="2x" icon={faBars}/>
+    </div>
+        </div> 
+    <Switch> 
+    <Route  path="/" exact component={CurrentWeather} />
+    <Route path="/DailyWeather" exact component={DailyWeather} />
+    <Route path="/HourlyWeather" component={HourlyWeather} />
+    <Route path="/DailyWeather/:id" component={DaysWeather}/>
+    <Route path="/About" component={About}/>
+    </Switch>  
+    <Nav display={display} setDisplay={setDisplay}/>
+    </div>
+      </Router>
+      
+    
   );
 }
 

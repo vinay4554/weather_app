@@ -1,0 +1,51 @@
+.detail {
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  justify-content: center;
+  grid-gap: 5% 2%;
+  padding: 2% 2% 60px;
+  color: black;
+}
+
+.detail div {
+  text-align: center;
+  border-radius: 25px;
+  text-shadow: 2px 2px 4px #000000;
+}
+@mixin backgroundcolor($theme) {
+  background-color: ($theme);
+  box-shadow: 0 0 5px $theme, 0 0 5px $theme;
+}
+.RAIN div {
+  @include backgroundcolor(rgba(20, 82, 110, 0.6));
+}
+.SNOW div {
+  @include backgroundcolor(rgba(45, 56, 34, 0.6));
+}
+.CLEAR div {
+  @include backgroundcolor(rgba(130, 67, 194, 0.5));
+}
+.MIST div {
+  @include backgroundcolor(rgba(219, 37, 107, 0.6));
+}
+.TORNADO div {
+  @include backgroundcolor(rgba(192, 142, 56, 0.6));
+}
+.DRIZZLE div {
+  @include backgroundcolor(rgba(4, 29, 44, 0.5));
+}
+.THUNDERSTORM div {
+  @include backgroundcolor(rgba(71, 162, 204, 0.6));
+}
+.CLOUDS div {
+  @include backgroundcolor(rgba(20, 30, 39, 0.8));
+}
+.DUST div,
+.SMOKE div,
+.HAZE div,
+.FOG div,
+.ASH div,
+.SQUALL div,
+.SAND div {
+  @include backgroundcolor(rgba(13, 63, 94, 0.5));
+}

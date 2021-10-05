@@ -1,0 +1,42 @@
+.daysdata h1 {
+  padding-top: 40px;
+  margin: 0;
+  text-align: center;
+  color: aliceblue;
+  font-size: 40px;
+}
+h5.hdata {
+  padding: 6px 0;
+}
+.daydata {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  padding: 25px 10% 75px;
+  font-size: 20px;
+}
+.daydata div {
+  text-align: center;
+}
+.daydetails {
+  display: grid;
+  grid-template-columns: 47% 47%;
+  justify-content: center;
+  grid-gap: 2% 3%;
+  padding: 1%;
+  color: white;
+}
+
+.daydetails div {
+  text-align: center;
+  border-radius: 25px;
+  background-color: rgba(183, 110, 207, 0.6);
+  font-weight: bold;
+  padding: 10px 5px;
+  h5 {
+    margin: 0;
+  }
+}
+img {
+  width: 80px;
+}
