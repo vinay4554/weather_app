@@ -1,4 +1,4 @@
-import react,{useState,useEffect} from "react"
+import react,{useState} from "react"
 import CurrentWeather from "./components/CurrentWeather";
 import Nav from "./components/Nav";
 import DailyWeather from "./components/DailyWeather";
@@ -9,7 +9,6 @@ import Weathertypes from "./components/Weathertypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./styles/App.scss";
-import axios from "axios";
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 function App() {
   const[display,setDisplay]=useState(false)

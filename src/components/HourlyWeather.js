@@ -8,7 +8,6 @@ function HourlyWeather(){
     const myDate = new Date( value *1000);
     return (myDate.toLocaleString([], { hour: 'numeric', minute: 'numeric' }));  
     }
-    const MY_KEY=process.env.REACT_APP_API_KEY;
     useEffect(() => {
         if (navigator.geolocation) {
            navigator.geolocation.getCurrentPosition(position => {

@@ -13,7 +13,6 @@ function CurrentData({time,day}){
      const[visi,setVisi]=useState([])
      const[speed,setSpeed]=useState([])
      const[image,setImage]=useState("")
-     const[error,setError]=useState("")
      const [inputvalue,setInputValue]=useState("")
      const handleValue=(e) => {
        setPlace(e.target.value)
@@ -42,7 +41,7 @@ function CurrentData({time,day}){
                setVisi(data.data)
                setSpeed(data.data.wind.speed)
             })
-            .catch(err => setError("Oops Location Not Found.Try with valid City"))
+            .catch(err => console.log(err))
      },[])
     return(
       <div className={`homepage ${image}`}>

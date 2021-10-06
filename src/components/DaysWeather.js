@@ -17,7 +17,7 @@ function DaysWeather({match}){
     },[])
     return(
         <div className="daysdata">
-        {weekData.filter(data => data.dt==match.params.id).map(dayData => {
+        {weekData.filter(data => (data.dt).toString()===match.params.id).map(dayData => {
             return(
                 <div key={dayData.dt} className="daydata">
                  <div className="icon">
