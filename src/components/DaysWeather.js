@@ -2,8 +2,19 @@ import react,{useState,useEffect} from "react";
 import axios from "axios"
 function DaysWeather({match}){
     const[weekData,setWeekData]=useState([])
+    const[coordinates,setCoordinates]=useState({
+        latitude:17.385044,
+        longitude:78.486671
+    })
     useEffect(() => {
-        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${match.params.lati}&lon=${match.params.longi}&exclude=hourly,alerts,current,minutely&units=metric&appid=82155dfc482d0e4c83cbbbc514394e78`)
+        if (navigator.geolocation) {
+           navigator.geolocation.getCurrentPosition(position => {
+             setCoordinates({latitude:position.coords.latitude,
+                longitude:position.coords.longitude});      
+       })}
+       },[])
+    useEffect(() => {
+        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&exclude=hourly,alerts,current,minutely&units=metric&appid=82155dfc482d0e4c83cbbbc514394e78`)
         .then(res => {
             console.log(res.data.daily)
             setWeekData(res.data.daily);
@@ -11,9 +22,6 @@ function DaysWeather({match}){
         .catch(err => {
             console.log(err)
         });
-        return () => {
-            setWeekData([]);
-          };
     },[])
     return(
         <div className="daysdata">

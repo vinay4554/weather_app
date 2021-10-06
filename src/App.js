@@ -29,7 +29,7 @@ function App() {
     <Route  path="/" exact component={CurrentWeather} />
     <Route path="/DailyWeather" exact component={DailyWeather} />
     <Route path="/HourlyWeather" component={HourlyWeather} />
-    <Route path="/DailyWeather/:id/:lati/:longi" component={DaysWeather}/>
+    <Route path="/DailyWeather/:id" component={DaysWeather}/>
     <Route path="/Weathertypes" component={Weathertypes}/>
     <Route path="/About" component={About}/>
     </Switch>  

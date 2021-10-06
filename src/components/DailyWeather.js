@@ -50,7 +50,7 @@ function DailyWeather(){
                 <h4> {days.temp.day} <sup>°</sup>c </h4>
                 </div>
                 <div className="selecticon">
-                <Link to={`/DailyWeather/${days.dt}/${coordinates.lat}/${coordinates.long}`}>
+                <Link to={`/DailyWeather/${days.dt}`}>
                 <FontAwesomeIcon size="2x" icon={faAngleDoubleRight} />
                 </Link>
                 </div>
