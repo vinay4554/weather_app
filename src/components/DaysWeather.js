@@ -2,6 +2,7 @@ import react,{useState,useEffect} from "react";
 import axios from "axios"
 function DaysWeather({match}){
     const[weekData,setWeekData]=useState([])
+    const MY_KEY=process.env.REACT_APP_API_KEY;
     useEffect(() => {
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${match.params.lati}&lon=${match.params.longi}&exclude=hourly,alerts,current,minutely&units=metric&appid=82155dfc482d0e4c83cbbbc514394e78`)
         .then(res => {

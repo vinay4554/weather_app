@@ -10,6 +10,7 @@ function DailyWeather(){
         lat:17.385044,
         long:78.486671
     })
+    const MY_KEY=process.env.REACT_APP_API_KEY;
     const getCurrentDay=(value) => {
         const myDate = new Date( value *1000);
         return (days[myDate.getDay()]);
