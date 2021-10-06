@@ -71,8 +71,8 @@ function CurrentData({time,day}){
       <h4>{desc}</h4>
        </div>
        <div className="clouds-icon">
-        {/* <h1><img src={`http://openweathermap.org/img/wn/${imageId}@2x.png`} alt="" />
-         </h1> */}
+         <h1><img src={`https://openweathermap.org/img/wn/${imageId}@2x.png`} alt="" />
+         </h1>
        </div>
       </div>
         <Details infor={infor} visi={visi} speed={speed} image={image}/>

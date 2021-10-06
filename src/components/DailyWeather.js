@@ -44,7 +44,7 @@ function DailyWeather(){
                <h4>{ getCurrentDay(days.dt)}</h4> 
                 </div>
                 <div className="cloudicon">
-                <img src={`http://openweathermap.org/img/wn/${days.weather[0].icon}.png`} alt="" />
+                <img src={`https://openweathermap.org/img/wn/${days.weather[0].icon}.png`} alt="" />
                 </div>
                 <div className="daytemp">
                 <h4> {days.temp.day} <sup>°</sup>c </h4>

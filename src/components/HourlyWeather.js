@@ -38,7 +38,7 @@ function HourlyWeather(){
                <h4>{getCurrentHour(hourdata.dt)}</h4> 
                 </div>
                 <div className="cloudicon">
-                <img src={`http://openweathermap.org/img/wn/${hourdata.weather[0].icon}.png`} alt="" />
+                <img src={`https://openweathermap.org/img/wn/${hourdata.weather[0].icon}.png`} alt="" />
                 </div>
                 <div className="hourtemp">
                 <h4>29.6 <sup>°</sup>c</h4>

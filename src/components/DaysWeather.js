@@ -21,7 +21,7 @@ function DaysWeather({match}){
             return(
                 <div key={dayData.dt} className="daydata">
                  <div className="icon">
-                {/* <img src={`http://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png`} alt="" /> */}
+                <img src={`https://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png`} alt="" />
                  </div>
                  <div className="des">
                      <h2>{(dayData.weather[0].description).toUpperCase()}</h2>
