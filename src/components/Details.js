@@ -17,11 +17,11 @@ function Details({infor,visi,speed,image}){
          </div>
         <div className="pressure">
          <h5>Pressure</h5>
-         <h5>{infor.pressure} Hpa</h5> 
+         <h5>{infor.pressure} hpa</h5> 
         </div>
         <div className="visilibity">
         <h5>Visilibity</h5>
-         <h5>{visi.visibility}</h5>
+         <h5>{visi.visibility} m</h5>
         </div>
         <div className="dew-point">
          <h5>Max : {infor.temp_max} <sup>°</sup>c</h5>

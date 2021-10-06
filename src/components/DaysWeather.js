@@ -2,7 +2,6 @@ import react,{useState,useEffect} from "react";
 import axios from "axios"
 function DaysWeather({match}){
     const[weekData,setWeekData]=useState([])
-    const MY_KEY=process.env.REACT_APP_API_KEY;
     useEffect(() => {
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${match.params.lati}&lon=${match.params.longi}&exclude=hourly,alerts,current,minutely&units=metric&appid=82155dfc482d0e4c83cbbbc514394e78`)
         .then(res => {
@@ -28,25 +27,29 @@ function DaysWeather({match}){
                      <h2>{(dayData.weather[0].description).toUpperCase()}</h2>
                  </div>
                  <div className="daydetails">
+                 <div className="maxtemp">
+                    <h5 className="hdata">{dayData.temp.max}  <sup>°</sup>c</h5>
+                    <h5 className="hdata">Max_Temp </h5>
+                     </div>
+                     <div className="mintemp">
+                    <h5 className="hdata">{dayData.temp.min}  <sup>°</sup>c</h5>
+                    <h5 className="hdata">Min_Temp </h5>
+                     </div>
                      <div className="pressure">
-                    <h5><img src="https://cdn-icons-png.flaticon.com/128/1839/1839341.png" alt="" /></h5>
-                    <h5 className="hdata">{dayData.pressure} Hpa</h5>
+                    <h5 className="hdata">{dayData.pressure} hpa</h5>
                     <h5 className="hdata">Pressure</h5>
                      </div>
                      <div className="humidity">
-                     <h5><img src="https://img-premium.flaticon.com/png/128/3093/premium/3093442.png?token=exp=1633269184~hmac=e0b96c140bfb6cb8645f6d62b811ffef" alt="" /></h5>
                     <h5 className="hdata">{dayData.humidity} %</h5>
                     <h5 className="hdata">Humidity</h5>
                      </div>
                      <div className="dew_point">
-                     <h5><img src="https://cdn-icons-png.flaticon.com/128/2736/2736828.png" alt="" /></h5>
-                    <h5 className="hdata">{dayData.dew_point}</h5>
-                    <h5 className="hdata">Dew Point %</h5>
+                    <h5 className="hdata">{dayData.dew_point} %</h5>
+                    <h5 className="hdata">Dew Point</h5>
                      </div>
                      <div className="wind_speed">
-                     <h5><img src="https://img-premium.flaticon.com/png/128/2011/premium/2011452.png?token=exp=1633268987~hmac=560e08cbafddfb28502604fb4dbcd134" alt="" /></h5>
-                    <h5 className="hdata">{dayData.wind_speed}</h5>
-                    <h5 className="hdata">Wind Speed m/s</h5>
+                    <h5 className="hdata">{dayData.wind_speed} m/s</h5>
+                    <h5 className="hdata">Wind Speed</h5>
                      </div>
                  </div>
                 </div>

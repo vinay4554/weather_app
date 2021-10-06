@@ -19,7 +19,6 @@ function CurrentData({time,day}){
        setPlace(e.target.value)
        setInputValue(e.target.value)
      }
-     const MY_KEY=process.env.REACT_APP_API_KEY;
      const handleRequest=() => {
       axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${place}&appid=82155dfc482d0e4c83cbbbc514394e78`)
       .then(data => {
