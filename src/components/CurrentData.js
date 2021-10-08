@@ -6,12 +6,8 @@ import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { faSearch} from "@fortawesome/free-solid-svg-icons";
 
 function CurrentData({time,day}){
-     const[infor,setInfor]=useState([])
-     const[imageId,setImageId]=useState([])
-     const[place,setPlace]=useState("Hyderabad")
-     const[desc,setDesc]=useState([])
-     const[visi,setVisi]=useState([])
-     const[speed,setSpeed]=useState([])
+     const[data,setData]=useState([])
+     const[place,setPlace]=useState("Warangal")
      const[image,setImage]=useState("")
      const [inputvalue,setInputValue]=useState("")
      const handleValue=(e) => {
@@ -21,12 +17,8 @@ function CurrentData({time,day}){
      const handleRequest=() => {
       axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${place}&appid=82155dfc482d0e4c83cbbbc514394e78`)
       .then(data => {
-        setInfor(data.data.main)
-        setImageId(data.data.weather[0].icon)
-        setDesc(data.data.weather[0].description)
-        setVisi(data.data)
-        setSpeed(data.data.wind.speed)
         setImage(data.data.weather[0].main)
+        setData(data.data)
         setInputValue("")
      })
       .catch(err => console.log(err))
@@ -35,11 +27,7 @@ function CurrentData({time,day}){
         axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${place}&appid=82155dfc482d0e4c83cbbbc514394e78`)
              .then(data => {
               setImage(data.data.weather[0].main)
-               setInfor(data.data.main)
-               setImageId(data.data.weather[0].icon)
-               setDesc(data.data.weather[0].description)
-               setVisi(data.data)
-               setSpeed(data.data.wind.speed)
+              setData(data.data)
             })
             .catch(err => console.log(err))
      },[])
@@ -56,28 +44,36 @@ function CurrentData({time,day}){
       <FontAwesomeIcon 
         icon={faSearch}  
         className="searchicon"
-        id="searchicon"
         onClick={handleRequest} 
         />
       </div>
+      <>
+      {data.length !==0?(
+        <>
         <div className="CurrentWeather">
        <div className="location">
-        <h2><FontAwesomeIcon icon={faMapMarkerAlt}/> {visi.name}</h2>  
+        <h2><FontAwesomeIcon icon={faMapMarkerAlt}/> {data.name}</h2>  
         <h5>{`${day}  ${time}`}</h5>
        </div>
        <div className="clouds">
-      <h1>{infor.temp} <sup>°</sup>c</h1> 
+      <h1>{data.main.temp} <sup>°</sup>c</h1> 
       
-      <h4>{desc}</h4>
+      <h4>{data.weather[0].description}</h4>
        </div>
        <div className="clouds-icon">
-         <h1><img src={`https://openweathermap.org/img/wn/${imageId}@2x.png`} alt="" />
+         <h1><img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="" />
          </h1>
        </div>
       </div>
-        <Details infor={infor} visi={visi} speed={speed} image={image}/>
+        <Details data={data}/>
+        </>
+      ):(
+        <>
+        <h1 className="errormessage">Opps ! page not found please come back later</h1>
+        </>
+      )}
+        </>
       </div>
-        
         
     )
 }

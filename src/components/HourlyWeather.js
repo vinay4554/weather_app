@@ -26,7 +26,9 @@ function HourlyWeather(){
         });
     },[])
     return(
-        <div className="hourlyweather">
+        <>
+        {hourlydata.length!==0 ?(
+            <div className="hourlyweather">
              <h3>Next 48 Hours Weather</h3>
              {hourlydata && hourlydata.map(hourdata => {
                  return(
@@ -35,7 +37,7 @@ function HourlyWeather(){
                <h4>{getCurrentHour(hourdata.dt)}</h4> 
                 </div>
                 <div className="cloudicon">
-                <img src={`https://openweathermap.org/img/wn/${hourdata.weather[0].icon}@2x.png`} alt="" />
+                <img src={`https://openweathermap.org/img/wn/${hourdata.weather[0].icon}.png`} alt="" />
                 </div>
                 <div className="hourtemp">
                 <h4>{hourdata.temp} <sup>°</sup>c</h4>
@@ -44,6 +46,13 @@ function HourlyWeather(){
                  )
              })}
         </div>
+        ):(
+            <>
+            <h1 className="errormessage">Opps ! page not found please come back later</h1>
+            </>
+        )}
+        
+        </>
     )
 }
 export default HourlyWeather;
