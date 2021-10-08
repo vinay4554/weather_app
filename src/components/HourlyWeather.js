@@ -24,9 +24,6 @@ function HourlyWeather(){
         .catch(err => {
             console.log(err)
         });
-        return () => {
-            setHourlyData([]);
-          };
     },[])
     return(
         <div className="hourlyweather">
@@ -38,10 +35,10 @@ function HourlyWeather(){
                <h4>{getCurrentHour(hourdata.dt)}</h4> 
                 </div>
                 <div className="cloudicon">
-                <img src={`https://openweathermap.org/img/wn/${hourdata.weather[0].icon}.png`} alt="" />
+                <img src={`https://openweathermap.org/img/wn/${hourdata.weather[0].icon}@2x.png`} alt="" />
                 </div>
                 <div className="hourtemp">
-                <h4>29.6 <sup>°</sup>c</h4>
+                <h4>{hourdata.temp} <sup>°</sup>c</h4>
                 </div>
             </div>
                  )
