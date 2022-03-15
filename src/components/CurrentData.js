@@ -24,13 +24,19 @@ function CurrentData({time,day}){
       .catch(err => console.log(err))
      }
      useEffect(() => {
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${place}&appid=82155dfc482d0e4c83cbbbc514394e78`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${place}&appid=${process.env.REACT_APP_API_KEY}`)
              .then(data => {
               setImage(data.data.weather[0].main)
               setData(data.data)
             })
             .catch(err => console.log(err))
      },[])
+
+     const handleSearch=(e) => {
+      if (e.key === 'Enter') {
+        handleRequest();
+        }
+  }
     return(
       <div className={`homepage ${image}`}>
       <div className="input">
@@ -40,8 +46,9 @@ function CurrentData({time,day}){
         value={inputvalue} 
         onInput={handleValue}
         placeholder="Search Your City ..."
+        onKeyDown={handleSearch}
         />
-      <FontAwesomeIcon 
+        <FontAwesomeIcon 
         icon={faSearch}  
         className="searchicon"
         onClick={handleRequest} 

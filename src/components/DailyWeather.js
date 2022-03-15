@@ -22,7 +22,7 @@ function DailyWeather(){
        })}
        },[])
     useEffect(() => {
-        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.long}&exclude=hourly,alerts,current,minutely&units=metric&appid=82155dfc482d0e4c83cbbbc514394e78`)
+        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.long}&exclude=hourly,alerts,current,minutely&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
         .then(res => {
             console.log(res.data.daily)
             setDailyData(res.data.daily);

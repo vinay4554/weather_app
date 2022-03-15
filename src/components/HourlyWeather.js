@@ -16,7 +16,7 @@ function HourlyWeather(){
        })}
        },[])
     useEffect(() => {
-        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=daily,alerts,current,minutely&units=metric&appid=82155dfc482d0e4c83cbbbc514394e78`)
+        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=daily,alerts,current,minutely&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
         .then(res => {
             console.log(res.data.hourly)
             setHourlyData(res.data.hourly);

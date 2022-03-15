@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./styles/App.scss";
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
+
 function App() {
   const[display,setDisplay]=useState(false)
   return (
