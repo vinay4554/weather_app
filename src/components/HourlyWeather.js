@@ -1,4 +1,4 @@
-import react, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 function HourlyWeather() {
   const [hourlydata, setHourlyData] = useState([]);
@@ -22,7 +22,6 @@ function HourlyWeather() {
         `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=daily,alerts,current,minutely&units=metric&appid=${process.env.REACT_APP_API_KEY}`
       )
       .then((res) => {
-        console.log(res.data.hourly);
         setHourlyData(res.data.hourly);
       })
       .catch((err) => {
@@ -54,11 +53,11 @@ function HourlyWeather() {
           );
         })
       ) : (
-        <div class="loading-container">
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
+        <div className="loading-container">
+          <div className="item"></div>
+          <div className="item"></div>
+          <div className="item"></div>
+          <div className="item"></div>
         </div>
       )}
     </div>

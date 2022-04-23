@@ -38,7 +38,6 @@ function DailyWeather() {
         `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.long}&exclude=hourly,alerts,current,minutely&units=metric&appid=${process.env.REACT_APP_API_KEY}`
       )
       .then((res) => {
-        console.log(res.data.daily);
         setDailyData(res.data.daily);
       })
       .catch((err) => {
@@ -79,11 +78,11 @@ function DailyWeather() {
           );
         })
       ) : (
-        <div class="loading-container">
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
+        <div className="loading-container">
+          <div className="item"></div>
+          <div className="item"></div>
+          <div className="item"></div>
+          <div className="item"></div>
         </div>
       )}
     </div>

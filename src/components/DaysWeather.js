@@ -22,7 +22,6 @@ function DaysWeather({ match }) {
         `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&exclude=hourly,alerts,current,minutely&units=metric&appid=${process.env.REACT_APP_API_KEY}`
       )
       .then((res) => {
-        console.log(res.data.daily);
         setWeekData(res.data.daily);
       })
       .catch((err) => {
